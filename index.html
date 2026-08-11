@@ -178,10 +178,8 @@
   /* ---------- ABOUT ---------- */
   .about-grid{display:grid; grid-template-columns:220px 1fr; gap:48px; align-items:start;}
   .portrait{
-    background:var(--paper); aspect-ratio:1; border-radius:2px;
-    display:flex; align-items:center; justify-content:center;
-    color:var(--ink-900); font-family:'IBM Plex Mono', monospace; font-size:12px;
-    text-align:center; padding:16px; border:1px solid var(--paper-dim);
+    width:100%; aspect-ratio:1; border-radius:2px;
+    object-fit:cover; border:1px solid var(--paper-dim);
   }
   .about-text p{margin-bottom:16px; color:var(--ink-text-dim); font-size:17px;}
 
@@ -291,10 +289,7 @@
       <h2>Despre mine</h2>
     </div>
     <div class="about-grid reveal">
-      <img src="poze/pozadeprofil.jpeg" alt="Poza mea" class=".portrait{
-    width:100%; aspect-ratio:1; border-radius:2px;
-    object-fit:cover; border:1px solid var(--paper-dim);
-  }">
+      <img src="poze/pozadeprofil.jpeg" alt="Poza mea" class="portrait">
       <div class="about-text">
         <p>Scriu pentru că e felul meu de a înțelege lumea și, ocazional, de a o face puțin mai puțin haotică pe hârtie decât e în realitate.</p>
         <p>Aici găsești cărțile la care am muncit, gândurile care nu au încăput în ele, și, sper, un motiv să revii.</p>
