@@ -252,7 +252,7 @@
 
 <section class="hero">
   <div class="hero-inner">
-    <span class="eyebrow">Jurnal de scriitoare</span>
+    <span class="eyebrow">Jurnalul unei scriitoare</span>
     <h1>Cuvintele își găsesc<br>drumul aici<span class="cursor"></span></h1>
     <p class="sub">Bun venit în colțul meu de internet — cărți, gânduri și povești așa cum se nasc ele, pagină cu pagină.</p>
     <div class="hero-ctas">
@@ -291,7 +291,10 @@
       <h2>Despre mine</h2>
     </div>
     <div class="about-grid reveal">
-      <div class="portrait">fotografia<br>ta aici</div>
+      <img src="poze/pic.jpg" alt="Poza mea" class=".portrait{
+    width:100%; aspect-ratio:1; border-radius:2px;
+    object-fit:cover; border:1px solid var(--paper-dim);
+  }">
       <div class="about-text">
         <p>Scriu pentru că e felul meu de a înțelege lumea și, ocazional, de a o face puțin mai puțin haotică pe hârtie decât e în realitate.</p>
         <p>Aici găsești cărțile la care am muncit, gândurile care nu au încăput în ele, și, sper, un motiv să revii.</p>
@@ -341,21 +344,24 @@ const BOOKS = [
     genre: "Roman",
     blurb: "Ea nu s-a așteptat niciodată să se îndrăgostească de singura persoană care ar putea să-i distrugă totul.",
     buyUrl: "https://bookbite.ro/collections/daniella-m/products/franturi-de-iubire-pictate-in-ro%C8%99u-printed-edges",
-    note: "thriller romantic/lovers to enemies"
+    note: "thriller romantic/lovers to enemies",
+    cover: "poze/v1.jpg"
   },
   {
     title: "Ultima mască a trecutului (vol.2)",
     genre: "Roman",
     blurb: "Unele secrete te urmăresc oriunde te-ai ascunde. Pentru că unele lucruri nu rămân în urmă atunci când pleci, iar unele povești nu se termină niciodată cu adevărat.",
     buyUrl: "https://bookbite.ro/collections/daniella-m/products/ultima-masca-a-trecutului",
-    note: "thriller/romance"
+    note: "thriller/romance",
+    cover: "poze/v2.jpg"
   },
   {
     title: "Tu, până la sfârșit (vol.3)",
     genre: "Roman",
     blurb: "O poveste intensă despre traume, iertare și încăpățânarea inimii de a bate pentru cine nu trebuie... sau pentru cine trebuie.",
     buyUrl: "https://bookbite.ro/collections/daniella-m/products/tu-pana-la-sfarsit",
-    note: "romance/happy ending/second chance"
+    note: "romance/happy ending/second chance",
+    cover: "poze/v3.jpg"
   }
 ];
 
@@ -387,11 +393,11 @@ function renderBooks(){
   grid.innerHTML = BOOKS.map(b => `
     <div class="book-card reveal">
       <span class="marginalia">${b.note}</span>
-      <div class="book-cover">
-        <div>
+      <div class="book-cover" style="${b.cover ? `background-image:url('${b.cover}');background-size:cover;background-position:center;` : ''}">
+        ${b.cover ? '' : `<div>
           <div class="cover-title">${b.title}</div>
           <div class="cover-sub">${b.genre}</div>
-        </div>
+        </div>`}
       </div>
       <div class="book-info">
         <h3>${b.title}</h3>
